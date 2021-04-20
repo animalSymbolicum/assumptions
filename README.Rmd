@@ -62,7 +62,7 @@ assumptions(t.test, color = F)
 assumptions(wilcox.test, color = F)
 ```
 
-## Overview of assumptions assessement tests (pre-tests)
+## Overview of assumptions assessment tests (pre-tests)
 
 All tests and graphs to assess specific assumptions like the distribution, independence, identical distribution (homogeneity) or randomness are collected in a central catalogue table. 
 
@@ -70,7 +70,7 @@ All tests and graphs to assess specific assumptions like the distribution, indep
 asm_library()
 ```
 
-## Single assessement of an assumption
+## Single assessment of an assumption
 
 Single or combinations of assumptions can be assessed by calls like:
 
