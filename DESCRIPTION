@@ -1,0 +1,14 @@
+Package: assumptions
+Title: Look up, plot, simulate and test statistical assumptions
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Majid",
+           family = "Eismann",
+           role = c("aut", "cre"),
+           email = "3i5mann@protonmail.com")
+Description: Conduct hypothesis tests with a notice and visual assessement of statistical assumptions. Look up statistical assumptions and possible tests to assess these assumptions. The package also provides functions to simulate assumption violations in interaction with tests for its assessement. 
+License: GPL (>= 2)
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.1
+Imports: data.table, PoweR, randtests, ExpDes, ggplot2, cowplot, moments

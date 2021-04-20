@@ -1,0 +1,137 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+The purpose of the 'assumptions' R-package is threefold:
+
+- It tries to raise awareness of statistical assumptions. Before conducting a statistical test its assumptions are printed to the console and the user is asked for confirmation after a graphical assessement.
+
+- It collects tests and graphs to assess statistical assumptions and simplifies looking up specific assumptions.
+
+- All the tests are made availible for simulations including complex decision strategies for picking a statistical test for different diagnosed assumption violations.
+
+## Install package
+
+To install 'assumptions' R-pacakge from github run:
+
+```{r install, eval =F}
+require(remotes)
+remotes::install_github("animalSymbolicum/assumptions")
+library(assumptions)
+```
+```{r load, eval =t, echo = F}
+library(assumptions)
+```
+
+## Hypothesis Tests
+
+The assumptions package seeks to expand common statistical methods with the notice of their assumptions for educational purpose. Currently conducting the parametric and non-parametric hypothesis test could called with:
+
+```{r asm_ttest}
+# t-test
+asm_ttest(rnorm(20), color = F)
+```
+
+```{r wilcoxon}
+# wilcoxon test
+asm_wilcox(rnorm(20), color = F)
+```
+
+## Look Up assumptions
+
+For common statistical methods assumptions can be looked up with:
+
+```{r ttestlookup}
+# get assumptions of t.test
+assumptions(t.test, color = F)
+```
+
+```{r wilcoxonlookup}
+# get assumptions of wilcox.test
+assumptions(wilcox.test, color = F)
+```
+
+## Overview of assumptions assessement tests (pre-tests)
+
+All tests and graphs to assess specific assumptions like the distribution, independence, identical distribution (homogeneity) or randomness are collected in a central catalogue table. 
+
+```{r library}
+asm_library()
+```
+
+## Single assessement of an assumption
+
+Single or combinations of assumptions can be assessed by calls like:
+
+```{r single}
+# only first test selected as example
+asm_distribution(rnorm(10), 1)
+asm_independence(rnorm(10), 1)
+asm_randomness(rnorm(10), 1)
+asm_homogeneity(list(A=rnorm(10), B=rnorm(10)), 1)
+
+# a combination of tests
+asm_preTests(rnorm(10), c("Shapiro-Wilk", "Rank", "Ljung-Pierce"))
+```
+
+## Simulations
+
+This tests are also available for simulations. Simulation can be defined and summarized by:
+
+```{r simulation}
+# minimal example
+minSim <- asm_simulate(100, pre_selection = c("Shapiro-Wilk", "Rank", "Ljung-Pierce"))
+asm_reportSim(minSim, report = "result")
+```
+
+Complex decision strategies can be defined in the simulation call or afterwards on simulation result:
+
+```{r simulationstrat}
+# minimal example
+asm_simStrategy(minSim, 
+  list(
+    simple  = quote(ifelse(pre_W_X & pre_W_Y, post_ttest, post_wilcox)),
+    complex = quote(ifelse(sim_n_X < 11 & pre_W_X_pvalue <= 0.001 & !descr_skew_X > 1, post_ttest, post_wilcox))
+  )
+)
+asm_reportSim(minSim, report = "result")
+```
+
+A simulation study like ['The two-sample t test: pre-testing its assumptions does not pay off'](https://doi.org/10.1007/s00362-009-0224-x) could be replicated with:
+
+```{r simulationex, eval=F}
+require(miceadds)
+asm_simulate(
+    simulations = 100000,
+    sim_n = list(c(10,30,10,30,30), c(10,30,30,10,100)),
+    sim_func = rep("asm_simData", 24),
+    sim_args = mapply(function(distr, sig, delta) {
+          list(
+              distr = c("fleishman_sim",  "fleishman_sim"),
+              dots  = list(
+                  list(mean = delta, sd = sig, skew = distr[1], kurt = distr[2]),
+                  list(skew = distr[3], kurt = distr[4])
+              )
+          )
+      },
+      rep(
+        list(c(0,0,0,0), c(0,15,0,15), c(0.5,15,0.5,15), c(1,15,1,15), c(3,15,3,15), c(0,0,3,15)),
+        4
+      ),
+      as.list(rep(rep(1:2, each = 6), 2)),
+      as.list(rep(c(0, 1), each = 12)),
+      SIMPLIFY=FALSE
+    )
+)
+```
