@@ -15,15 +15,15 @@ knitr::opts_chunk$set(
 
 The purpose of the 'assumptions' R-package is threefold:
 
-- It tries to raise awareness of statistical assumptions. Before conducting a statistical test its assumptions are printed to the console and the user is asked for confirmation after a graphical assessement.
+- It tries to raise awareness of statistical assumptions. Before conducting a statistical test, its assumptions are printed to the console and the user is asked for confirmation after a graphical assessment.
 
 - It collects tests and graphs to assess statistical assumptions and simplifies looking up specific assumptions.
 
-- All the tests are made availible for simulations including complex decision strategies for picking a statistical test for different diagnosed assumption violations.
+- All the tests are made available for simulations including complex decision strategies for picking a statistical test for different diagnosed assumption violations.
 
 ## Install package
 
-To install 'assumptions' R-pacakge from github run:
+To install 'assumptions' R-package from github run:
 
 ```{r install, eval =F}
 require(remotes)
@@ -36,7 +36,7 @@ library(assumptions)
 
 ## Hypothesis Tests
 
-The assumptions package seeks to expand common statistical methods with the notice of their assumptions for educational purpose. Currently conducting the parametric and non-parametric hypothesis test could called with:
+The assumptions package seeks to expand common statistical methods with the notice of their assumptions for educational purpose. To conduct a parametric or non-parametric hypothesis test call:
 
 ```{r asm_ttest}
 # t-test
@@ -50,7 +50,7 @@ asm_wilcox(rnorm(20), color = F)
 
 ## Look Up assumptions
 
-For common statistical methods assumptions can be looked up with:
+Common statistical methods assumptions can be looked up with:
 
 ```{r ttestlookup}
 # get assumptions of t.test
@@ -87,7 +87,7 @@ asm_preTests(rnorm(10), c("Shapiro-Wilk", "Rank", "Ljung-Pierce"))
 
 ## Simulations
 
-This tests are also available for simulations. Simulation can be defined and summarized by:
+These tests are also available for simulations. Simulation can be defined and summarized by:
 
 ```{r simulation}
 # minimal example

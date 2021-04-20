@@ -30,9 +30,9 @@ assumptions <- function(call, color = T) {
                             c(
                                 paste0("The t.test makes ",colStart,"three", colEnd, " assumptions for the input variable(s) x (and y):"),
                                 paste0(" I  ) the sample distribution is ",colStart,"normal", colEnd, " or the sample size is big enough that "),
-                                "        the distribution of the sample means likely converges to normal.",
+                                "        the distribution of the sample means likely converge to normal.",
                                 paste0(" II ) are ",colStart,"identically distributed", colEnd, ", which means each value comes from the same distribution."),
-                                "        As two variables are used the two variables can have two different distributions if ",
+                                "        As two variables are used, the two variables can have two different distributions if ",
                                 "        the Welch Test is used (var.equal=F).",
                                 paste0(" III) are ",colStart,"independent", colEnd, ", which means each value is not influenced by any other value. "),
                                 "        As two paired variables are used (paired=T) the pairs are dependent but ",
@@ -82,7 +82,7 @@ assumptions <- function(call, color = T) {
                             c(
                                 paste0("The asm_ttest makes ",colStart,"three", colEnd, " assumptions for the input variable(s) x (and y):"),
                                 paste0(" I  ) the sample distribution is ",colStart,"normal", colEnd, " or the sample size is big enough that "),
-                                "        the distribution of the sample means likely converges to normal.",
+                                "        the distribution of the sample means likely converge to normal.",
                                 paste0(" II ) are ",colStart,"identically distributed", colEnd, ", which means each value comes from the same distribution."),
                                 paste0(" III) are ",colStart,"independent", colEnd, ", which means each value is not influenced by any other value. "),
                                 "        As two paired variables are used (paired=T) the pairs are dependent but ",

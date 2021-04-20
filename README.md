@@ -4,20 +4,20 @@
 The purpose of the ‘assumptions’ R-package is threefold:
 
   - It tries to raise awareness of statistical assumptions. Before
-    conducting a statistical test its assumptions are printed to the
+    conducting a statistical test, its assumptions are printed to the
     console and the user is asked for confirmation after a graphical
-    assessement.
+    assessment.
 
   - It collects tests and graphs to assess statistical assumptions and
     simplifies looking up specific assumptions.
 
-  - All the tests are made availible for simulations including complex
+  - All the tests are made available for simulations including complex
     decision strategies for picking a statistical test for different
     diagnosed assumption violations.
 
 ## Install package
 
-To install ‘assumptions’ R-pacakge from github run:
+To install ‘assumptions’ R-package from github run:
 
 ``` r
 require(remotes)
@@ -28,9 +28,8 @@ library(assumptions)
 ## Hypothesis Tests
 
 The assumptions package seeks to expand common statistical methods with
-the notice of their assumptions for educational purpose. Currently
-conducting the parametric and non-parametric hypothesis test could
-called with:
+the notice of their assumptions for educational purpose. To conduct a
+parametric or non-parametric hypothesis test call:
 
 ``` r
 # t-test
@@ -63,13 +62,13 @@ asm_ttest(rnorm(20), color = F)
     #>  One Sample t-test
     #> 
     #> data:  x
-    #> t = -0.048162, df = 19, p-value = 0.9621
+    #> t = -0.20914, df = 19, p-value = 0.8366
     #> alternative hypothesis: true mean is not equal to 0
     #> 95 percent confidence interval:
-    #>  -0.5351161  0.5110430
+    #>  -0.7126916  0.5832038
     #> sample estimates:
     #>   mean of x 
-    #> -0.01203654
+    #> -0.06474392
 
 ``` r
 # wilcoxon test
@@ -108,12 +107,12 @@ asm_wilcox(rnorm(20), color = F)
     #>  Wilcoxon signed rank exact test
     #> 
     #> data:  x
-    #> V = 104, p-value = 0.9854
+    #> V = 115, p-value = 0.7285
     #> alternative hypothesis: true location is not equal to 0
 
 ## Look Up assumptions
 
-For common statistical methods assumptions can be looked up with:
+Common statistical methods assumptions can be looked up with:
 
 ``` r
 # get assumptions of t.test
@@ -258,30 +257,30 @@ Single or combinations of assumptions can be assessed by calls like:
 ``` r
 # only first test selected as example
 asm_distribution(rnorm(10), 1)
-#>          Name      Help   pvalue
-#> 1: Lilliefors <list[1]> 0.564133
+#>          Name      Help    pvalue
+#> 1: Lilliefors <list[1]> 0.8738611
 asm_independence(rnorm(10), 1)
 #>          Name      Help    pvalue
-#> 1: Box-Pierce <list[1]> 0.8072819
+#> 1: Box-Pierce <list[1]> 0.4651522
 asm_randomness(rnorm(10), 1)
 #>            Name      Help         stat    pvalue
-#> 1: Bartels Rank <list[1]> bartels.rank 0.1822959
+#> 1: Bartels Rank <list[1]> bartels.rank 0.5048618
 asm_homogeneity(list(A=rnorm(10), B=rnorm(10)), 1)
 #>      Name      Help    pvalue
-#> 1: F-Test <list[1]> 0.3109536
+#> 1: F-Test <list[1]> 0.7498134
 
 # a combination of tests
 asm_preTests(rnorm(10), c("Shapiro-Wilk", "Rank", "Ljung-Pierce"))
 #>            Name      Help    pvalue stat
-#> 1: Shapiro-Wilk <list[1]> 0.2722585 <NA>
-#> 2:         Rank <list[1]> 0.9287301 rank
-#> 3: Ljung-Pierce <list[1]> 0.7465508 <NA>
+#> 1: Shapiro-Wilk <list[1]> 0.2158059 <NA>
+#> 2:         Rank <list[1]> 0.2449288 rank
+#> 3: Ljung-Pierce <list[1]> 0.5394459 <NA>
 ```
 
 ## Simulations
 
-This tests are also available for simulations. Simulation can be defined
-and summarized by:
+These tests are also available for simulations. Simulation can be
+defined and summarized by:
 
 ``` r
 # minimal example
@@ -289,9 +288,9 @@ minSim <- asm_simulate(100, pre_selection = c("Shapiro-Wilk", "Rank", "Ljung-Pie
 asm_reportSim(minSim, report = "result")
 #> $result
 #>       sim_func sim_n_X sim_n_Y sim_cell pre_W_X pre_W_Y pre_rank_X pre_rank_Y
-#> 1: asm_simData      10      30        1    0.04    0.02       0.01       0.07
+#> 1: asm_simData      10      30        1    0.05    0.06          0       0.03
 #>    pre_Ljung.Box_X pre_Ljung.Box_Y post_welch post_ttest post_wilcox
-#> 1:            0.05            0.05       0.09       0.06        0.07
+#> 1:            0.05            0.05       0.05       0.05        0.05
 #> 
 #> $cross
 #> NULL
@@ -314,11 +313,11 @@ asm_simStrategy(minSim,
 asm_reportSim(minSim, report = "result")
 #> $result
 #>       sim_func sim_n_X sim_n_Y sim_cell pre_W_X pre_W_Y pre_rank_X pre_rank_Y
-#> 1: asm_simData      10      30        1    0.04    0.02       0.01       0.07
+#> 1: asm_simData      10      30        1    0.05    0.06          0       0.03
 #>    pre_Ljung.Box_X pre_Ljung.Box_Y post_welch post_ttest post_wilcox
-#> 1:            0.05            0.05       0.09       0.06        0.07
+#> 1:            0.05            0.05       0.05       0.05        0.05
 #>    strat_simple strat_complex
-#> 1:         0.07          0.07
+#> 1:         0.05          0.05
 #> 
 #> $cross
 #> NULL

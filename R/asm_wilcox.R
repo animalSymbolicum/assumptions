@@ -22,7 +22,7 @@ asm_wilcox <- function(x, y = NULL, ..., confirm = T, diagnosePlots = T, color =
         cat(paste0(rep("*", 90), collapse = ""))
         cat("\n")
         cat(
-            "If you confirm to acknowladge that under violation(s) of the assumptions the wilcoxon test\nthe wilcoxon results might be wrong.\n"
+            "If you confirm to acknowledge that under violation(s) of the assumptions the wilcoxon test\nthe wilcoxon results might be wrong.\n"
         )
         readline(prompt="Press [enter] to confirm")
 
@@ -55,7 +55,7 @@ asm_wilcox <- function(x, y = NULL, ..., confirm = T, diagnosePlots = T, color =
             {if (length(plotData[[1]]) > 10) asm_graphWindow(plotData) else NULL}
         )}))
         readline(
-            prompt="Press [enter] to run wilcoxon test - if you convinced your data fullfills the assumptions"
+            prompt="Press [enter] to run wilcoxon test - if you convinced your data fulfills the assumptions"
         )
     }
 

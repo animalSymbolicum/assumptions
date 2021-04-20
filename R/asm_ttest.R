@@ -27,7 +27,7 @@ asm_ttest <- function(x, y = NULL, ..., confirm = TRUE, diagnosePlots = TRUE, co
         cat(paste0(rep("*", 83), collapse = ""))
         cat("\n")
         cat(
-            "If you confirm to acknowladge that under violation(s) of the assumptions the t-test\nthe t-test results might be wrong.\n"
+            "If you confirm to acknowledge that under violation(s) of the assumptions the t-test\nthe t-test results might be wrong.\n"
         )
         readline(prompt="Press [enter] to confirm")
     }
@@ -59,7 +59,7 @@ asm_ttest <- function(x, y = NULL, ..., confirm = TRUE, diagnosePlots = TRUE, co
             {if (length(plotData[[1]]) > 10) asm_graphWindow(plotData) else NULL}
         )}))
         readline(
-            prompt="Press [enter] to run Welch-Test - if you are convinced your data fullfills the assumptions."
+            prompt="Press [enter] to run Welch-Test - if you are convinced your data fulfills the assumptions."
         )
     }
 
