@@ -1,6 +1,6 @@
 #' Test the assumption of independence
 #'
-#' This function applies tests for independece assumption in form of autocorrelation.
+#' This function applies tests for the assumption of independence in form of autocorrelations.
 #' @param data a vector, list or data.frame of data values.
 #' @param tests a selection of tests via its names or index. See also the \link[assumptions]{asm_library} function.
 #' @param report which statistics should be reported.

@@ -2,7 +2,7 @@
 % Please edit documentation in R/asm_report.R
 \name{asm_reportData}
 \alias{asm_reportData}
-\title{Describe data in simulation}
+\title{Describe simulated data}
 \usage{
 asm_reportData(data, with = c("mean", "median", "sd", "skew", "kurtosis"))
 }

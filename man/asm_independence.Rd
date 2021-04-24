@@ -30,7 +30,7 @@ asm_independence(
 \item{checkData}{logical if TRUE data is checked before running tests.}
 }
 \description{
-This function applies tests for independece assumption in form of autocorrelation.
+This function applies tests for the assumption of independence in form of autocorrelations.
 }
 \examples{
 asm_independence(list(A = 1:100, B = 1:100))

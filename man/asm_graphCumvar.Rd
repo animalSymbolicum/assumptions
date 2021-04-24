@@ -2,7 +2,7 @@
 % Please edit documentation in R/asm_graph.R
 \name{asm_graphCumvar}
 \alias{asm_graphCumvar}
-\title{Plot Cummulative Variance of data}
+\title{Plot Cumulative Variance of data}
 \usage{
 asm_graphCumvar(data)
 }
@@ -10,7 +10,7 @@ asm_graphCumvar(data)
 \item{data}{a vector, list or data.frame of data values.}
 }
 \description{
-This function plots the fluctuation of the variance if its calculated as cummulated variance.
+This function plots the fluctuation of the variance if its calculated as cumulated variance.
 }
 \examples{
 # normal data vs. mixed non-id data

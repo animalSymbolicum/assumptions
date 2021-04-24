@@ -10,7 +10,7 @@ asm_graphWindow(data)
 \item{data}{a vector, list or data.frame of data values.}
 }
 \description{
-This function draws 'windows' onto a scatterplot of the data as a support to imagen homogeneity.
+This function draws 'windows' onto a scatterplot of the data as a support to demonstrate homogeneity.
 Each window should contain the same pattern if the data points are homogeneous or
 identically distributed.
 }

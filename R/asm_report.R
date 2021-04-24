@@ -1,4 +1,4 @@
-#' Describe data in simulation
+#' Describe simulated data
 #'
 #' This function is used in simulation to calculate descriptive parameters of simulated data.
 #' @param data a vector, list or data.frame of data values.
@@ -53,7 +53,7 @@ asm_reportData <- function(data, with = c("mean", "median", "sd", "skew", "kurto
 #' This function can be used to aggregate a simulation result of the \link[assumptions]{asm_simulate} function.
 #' @param simResult simulation result of \link[assumptions]{asm_simulate} function.
 #' @param digits integer indicating the number of decimal places for rounding the results.
-#' @param report what aggregations should be reported. "result" gives aggregation for all pre- and post-tests and
+#' @param report which aggregations should be reported. "result" gives aggregation for all pre- and post-tests and
 #' strategies. "cross" gives a cross tabulation for all tests. "description" gives aggregation for all descritpive parameters.
 #' @examples
 #' asm_reportSim(asm_simulate())

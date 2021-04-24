@@ -1,6 +1,6 @@
 #' Simulate data for asm_ functions
 #'
-#' This function simulates the impact of the assessement of statistical assumptions (pre-test) to decide on
+#' This function simulates the impact of the assessment of statistical assumptions (pre-tests) to pick
 #' a statistical hypothesis test (post-test).
 #' @param simulations integer indicating the number of simulations per configuration.
 #' @param sim_n integer or list of integers for samplesize(s) to draw.
@@ -23,7 +23,7 @@
 #'      \item{'sim_'}{All columns beginning with sim_ prefix are describing the configuration of the simulation.}
 #'      \item{'descr_'}{All columns beginning with descr_ prefix are the result of the describe function of the drawn sample (default is \link[assumptions]{asm_reportData}).}
 #'      \item{'pre_'}{All columns beginning with 'pre_' prefix are containing the results of the selected pre-tests with the selected report statistics (default is the p-value). Columns with 'SimulationName' of \link[assumptions]{asm_library} are a logical value indicating if p-value of pre-test is smaller than global alpha.}
-#'      \item{'post_'}{All columns beginning with post_ prefix arecontaining the results of the selected post-tests with the selected report statistics (default is the p-value). Columns with only the name of the test (like post_ttest) are a logical value indicating if p-value of post-test is smaller than global alpha.}
+#'      \item{'post_'}{All columns beginning with post_ prefix are containing the results of the selected post-tests with the selected report statistics (default is the p-value). Columns with only the name of the test (like post_ttest) are a logical value indicating if p-value of post-test is smaller than global alpha.}
 #'      \item{'strat_'}{All columns beginning with strat_ prefix are the evaluated decision strategies.}
 #' }
 #' @examples
@@ -50,7 +50,7 @@ asm_simulate <- function(
 ) {
 
     # debugging
-    sapply(formalArgs(asm_simulate), function(x) assign(x, get(x), envir = globalenv()))
+    # sapply(formalArgs(asm_simulate), function(x) assign(x, get(x), envir = globalenv()))
     # stop("mo")
 
     # test input funcs
@@ -468,7 +468,7 @@ asm_simVar <- function(n     = 30,
 #' Simulate multiple variables
 #'
 #' This function simulates multiple variables with given distribution functions.
-#' @param N integer samplesize to draw.
+#' @param N integer sample size to draw.
 #' @param distr distribution function to draw sample with.
 #' @param dots args passed to distribution function.
 #' @param suffix how to name simulated variables.

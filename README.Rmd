@@ -64,7 +64,7 @@ assumptions(wilcox.test, color = F)
 
 ## Overview of assumptions assessment tests (pre-tests)
 
-All tests and graphs to assess specific assumptions like the distribution, independence, identical distribution (homogeneity) or randomness are collected in a central catalogue table. 
+All tests and graphs to assess specific assumptions such as the distribution, independence, identical distribution (homogeneity) or randomness are collected in a central catalogue table. 
 
 ```{r library}
 asm_library()

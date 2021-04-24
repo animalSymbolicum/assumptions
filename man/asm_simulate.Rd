@@ -55,12 +55,12 @@ in the result table.
      \item{'sim_'}{All columns beginning with sim_ prefix are describing the configuration of the simulation.}
      \item{'descr_'}{All columns beginning with descr_ prefix are the result of the describe function of the drawn sample (default is \link[assumptions]{asm_reportData}).}
      \item{'pre_'}{All columns beginning with 'pre_' prefix are containing the results of the selected pre-tests with the selected report statistics (default is the p-value). Columns with 'SimulationName' of \link[assumptions]{asm_library} are a logical value indicating if p-value of pre-test is smaller than global alpha.}
-     \item{'post_'}{All columns beginning with post_ prefix arecontaining the results of the selected post-tests with the selected report statistics (default is the p-value). Columns with only the name of the test (like post_ttest) are a logical value indicating if p-value of post-test is smaller than global alpha.}
+     \item{'post_'}{All columns beginning with post_ prefix are containing the results of the selected post-tests with the selected report statistics (default is the p-value). Columns with only the name of the test (like post_ttest) are a logical value indicating if p-value of post-test is smaller than global alpha.}
      \item{'strat_'}{All columns beginning with strat_ prefix are the evaluated decision strategies.}
 }
 }
 \description{
-This function simulates the impact of the assessement of statistical assumptions (pre-test) to decide on
+This function simulates the impact of the assessment of statistical assumptions (pre-tests) to pick
 a statistical hypothesis test (post-test).
 }
 \examples{

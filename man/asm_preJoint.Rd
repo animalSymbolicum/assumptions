@@ -12,8 +12,8 @@ asm_preJoint(data, simulate = FALSE)
 \item{simulate}{logical if running in simulation.}
 }
 \description{
-This function conducts one version of Aris Spanos Auxiliary Regression to test the iid assumption of a given
-variable.
+This function conducts a version of Aris Spanos Auxiliary Regression to jointly test if the variable is
+independent and identically distributed.
 }
 \examples{
 # test with normal data

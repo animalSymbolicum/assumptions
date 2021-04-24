@@ -36,13 +36,13 @@ parametric or non-parametric hypothesis test call:
 asm_ttest(rnorm(20), color = F)
 #> The asm_ttest makes three assumptions for the input variable(s) x (and y):
 #>  I  ) the sample distribution is normal or the sample size is big enough that 
-#>         the distribution of the sample means likely converge to normal.
+#>         the distribution of the sample means likely converges to normal.
 #>  II ) are identically distributed, which means each value comes from the same distribution.
 #>  III) are independent, which means each value is not influenced by any other value. 
 #>         As two paired variables are used (paired=T) the pairs are dependent but 
 #>         values between pairs still must be independent.
 #> ***********************************************************************************
-#> If you confirm to acknowledge that under violation(s) of the assumptions the t-test
+#> If you confirm to acknowladge that under violation(s) of the assumptions the t-test
 #> the t-test results might be wrong.
 #> Press [enter] to confirm
 ```
@@ -57,18 +57,18 @@ asm_ttest(rnorm(20), color = F)
 
 <img src="man/figures/README-asm_ttest-3.png" width="100%" />
 
-    #> Press [enter] to run Welch-Test - if you are convinced your data fulfills the assumptions.
+    #> Press [enter] to run Welch-Test - if you are convinced your data fullfills the assumptions.
     #> 
     #>  One Sample t-test
     #> 
     #> data:  x
-    #> t = -1.014, df = 19, p-value = 0.3233
+    #> t = 1.4677, df = 19, p-value = 0.1586
     #> alternative hypothesis: true mean is not equal to 0
     #> 95 percent confidence interval:
-    #>  -0.7972392  0.2768809
+    #>  -0.1542792  0.8784647
     #> sample estimates:
-    #>  mean of x 
-    #> -0.2601792
+    #> mean of x 
+    #> 0.3620928
 
 ``` r
 # wilcoxon test
@@ -87,7 +87,7 @@ asm_wilcox(rnorm(20), color = F)
 #>  III) are identically distributed, which means each value comes from the same distribution.
 #>  IV ) are independent, which means each value is not influenced by any other value.
 #> ******************************************************************************************
-#> If you confirm to acknowledge that under violation(s) of the assumptions the wilcoxon test
+#> If you confirm to acknowladge that under violation(s) of the assumptions the wilcoxon test
 #> the wilcoxon results might be wrong.
 #> Press [enter] to confirm
 ```
@@ -102,12 +102,12 @@ asm_wilcox(rnorm(20), color = F)
 
 <img src="man/figures/README-wilcoxon-3.png" width="100%" />
 
-    #> Press [enter] to run wilcoxon test - if you convinced your data fulfills the assumptions
+    #> Press [enter] to run wilcoxon test - if you convinced your data fullfills the assumptions
     #> 
     #>  Wilcoxon signed rank exact test
     #> 
     #> data:  x
-    #> V = 128, p-value = 0.4091
+    #> V = 67, p-value = 0.165
     #> alternative hypothesis: true location is not equal to 0
 
 ## Look Up assumptions
@@ -119,9 +119,9 @@ Common statistical methods assumptions can be looked up with:
 assumptions(t.test, color = F)
 #> The t.test makes three assumptions for the input variable(s) x (and y):
 #>  I  ) the sample distribution is normal or the sample size is big enough that 
-#>         the distribution of the sample means likely converge to normal.
+#>         the distribution of the sample means likely converges to normal.
 #>  II ) are identically distributed, which means each value comes from the same distribution.
-#>         As two variables are used, the two variables can have two different distributions if 
+#>         As two variables are used the two variables can have two different distributions if 
 #>         the Welch Test is used (var.equal=F).
 #>  III) are independent, which means each value is not influenced by any other value. 
 #>         As two paired variables are used (paired=T) the pairs are dependent but 
@@ -148,7 +148,7 @@ assumptions(wilcox.test, color = F)
 
 ## Overview of assumptions assessment tests (pre-tests)
 
-All tests and graphs to assess specific assumptions like the
+All tests and graphs to assess specific assumptions such as the
 distribution, independence, identical distribution (homogeneity) or
 randomness are collected in a central catalogue table.
 
@@ -258,23 +258,23 @@ Single or combinations of assumptions can be assessed by calls like:
 # only first test selected as example
 asm_distribution(rnorm(10), 1)
 #>          Name      Help    pvalue
-#> 1: Lilliefors <list[1]> 0.2895165
+#> 1: Lilliefors <list[1]> 0.3676293
 asm_independence(rnorm(10), 1)
 #>          Name      Help    pvalue
-#> 1: Box-Pierce <list[1]> 0.4574869
+#> 1: Box-Pierce <list[1]> 0.2046042
 asm_randomness(rnorm(10), 1)
-#>            Name      Help         stat    pvalue
-#> 1: Bartels Rank <list[1]> bartels.rank 0.6466177
+#>            Name      Help         stat     pvalue
+#> 1: Bartels Rank <list[1]> bartels.rank 0.07310329
 asm_homogeneity(list(A=rnorm(10), B=rnorm(10)), 1)
-#>      Name      Help   pvalue
-#> 1: F-Test <list[1]> 0.301589
+#>      Name      Help    pvalue
+#> 1: F-Test <list[1]> 0.9083232
 
 # a combination of tests
 asm_preTests(rnorm(10), c("Shapiro-Wilk", "Rank", "Ljung-Pierce"))
-#>            Name      Help     pvalue stat
-#> 1: Shapiro-Wilk <list[1]> 0.87753925 <NA>
-#> 2:         Rank <list[1]> 0.03966867 rank
-#> 3: Ljung-Pierce <list[1]> 0.75402241 <NA>
+#>            Name      Help    pvalue stat
+#> 1: Shapiro-Wilk <list[1]> 0.5708560 <NA>
+#> 2:         Rank <list[1]> 0.2449288 rank
+#> 3: Ljung-Pierce <list[1]> 0.8343094 <NA>
 ```
 
 ## Simulations
@@ -288,9 +288,9 @@ minSim <- asm_simulate(100, pre_selection = c("Shapiro-Wilk", "Rank", "Ljung-Pie
 asm_reportSim(minSim, report = "result")
 #> $result
 #>       sim_func sim_n_X sim_n_Y sim_cell pre_W_X pre_W_Y pre_rank_X pre_rank_Y
-#> 1: asm_simData      10      30        1    0.05    0.05       0.03       0.09
+#> 1: asm_simData      10      30        1    0.03    0.06       0.07       0.06
 #>    pre_Ljung.Box_X pre_Ljung.Box_Y post_welch post_ttest post_wilcox
-#> 1:            0.02            0.05       0.04       0.04        0.06
+#> 1:            0.02             0.1       0.05       0.03        0.05
 #> 
 #> $cross
 #> NULL
@@ -313,11 +313,11 @@ asm_simStrategy(minSim,
 asm_reportSim(minSim, report = "result")
 #> $result
 #>       sim_func sim_n_X sim_n_Y sim_cell pre_W_X pre_W_Y pre_rank_X pre_rank_Y
-#> 1: asm_simData      10      30        1    0.05    0.05       0.03       0.09
+#> 1: asm_simData      10      30        1    0.03    0.06       0.07       0.06
 #>    pre_Ljung.Box_X pre_Ljung.Box_Y post_welch post_ttest post_wilcox
-#> 1:            0.02            0.05       0.04       0.04        0.06
+#> 1:            0.02             0.1       0.05       0.03        0.05
 #>    strat_simple strat_complex
-#> 1:         0.06          0.06
+#> 1:         0.05          0.05
 #> 
 #> $cross
 #> NULL

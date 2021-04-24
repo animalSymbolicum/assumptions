@@ -15,7 +15,7 @@ asm_reportSim(
 
 \item{digits}{integer indicating the number of decimal places for rounding the results.}
 
-\item{report}{what aggregations should be reported. "result" gives aggregation for all pre- and post-tests and
+\item{report}{which aggregations should be reported. "result" gives aggregation for all pre- and post-tests and
 strategies. "cross" gives a cross tabulation for all tests. "description" gives aggregation for all descritpive parameters.}
 }
 \description{

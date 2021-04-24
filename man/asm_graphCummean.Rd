@@ -2,7 +2,7 @@
 % Please edit documentation in R/asm_graph.R
 \name{asm_graphCummean}
 \alias{asm_graphCummean}
-\title{Plot Cummulative Mean of data}
+\title{Plot Cumulative Mean of data}
 \usage{
 asm_graphCummean(data, legend = T)
 }
@@ -12,7 +12,7 @@ asm_graphCummean(data, legend = T)
 \item{legend}{logical add legend.}
 }
 \description{
-This function plots the fluctuation of the mean if its calculated as cummulated mean.
+This function plots the fluctuation of the mean if its calculated as cumulated mean.
 }
 \examples{
 # normal data vs. mixed non-id data

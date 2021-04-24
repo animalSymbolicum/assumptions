@@ -12,7 +12,7 @@ asm_simData(
 )
 }
 \arguments{
-\item{N}{integer samplesize to draw.}
+\item{N}{integer sample size to draw.}
 
 \item{distr}{distribution function to draw sample with.}
 

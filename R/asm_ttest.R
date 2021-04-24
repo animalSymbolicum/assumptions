@@ -1,7 +1,7 @@
-#' t-Test with explicit assumptions
+#' t-test with explicit assumptions
 #'
-#' This function is a wrapper for the  \link[stats]{t.test} function. Before conducting the t-Test diagnostic
-#' plots are shown to assess the assumptions of the t-Test.
+#' This function is a wrapper for the  \link[stats]{t.test} function. Before conducting the t-test diagnostic
+#' plots are shown to assess the assumptions of the t-test.
 #' @param x numeric vector of data values.
 #' @param y NULL or a numeric vector of data values.
 #' @param ... further arguments passed to t.test functions (like mu, paired).
@@ -17,7 +17,7 @@ asm_ttest <- function(x, y = NULL, ..., confirm = TRUE, diagnosePlots = TRUE, co
 
     args <- list(...)
     if (!is.null(y) && "var.equal" %in% names(args) && args$var.equal) {
-        warning("Not using Welch-Test (var.equal=F) is not recommended because t-Test performs poor under unequal variances.")
+        warning("Not using Welch-Test (var.equal=F) is not recommended because t-test performs poor under unequal variances.")
     }
 
     # confirm assumptions

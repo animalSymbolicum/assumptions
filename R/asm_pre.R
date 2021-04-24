@@ -92,8 +92,8 @@ asm_preTests <- function(data,
 
 #' Spanos Auxiliary Regression
 #'
-#' This function conducts one version of Aris Spanos Auxiliary Regression to test the iid assumption of a given
-#' variable.
+#' This function conducts a version of Aris Spanos Auxiliary Regression to jointly test if the variable is
+#' independent and identically distributed.
 #' @param data a data.frame with at least two columns or a list of length two.
 #' @param simulate logical if running in simulation.
 #' @examples
@@ -108,10 +108,9 @@ asm_preTests <- function(data,
 
 asm_preJoint <- function(data, simulate = FALSE) {
 
-    # paired data?
-
     # bivariate case
     if (is.list(data) && length(data) == 2) {
+
         # prepare data
         if (is.list(data)) data <- data[[1]]
         N <- length(data)
@@ -121,10 +120,9 @@ asm_preJoint <- function(data, simulate = FALSE) {
             "t_1" = data[-N]
         )
 
-        # F-Test oder einzel Test?
+        # F-Test
         meanModel <- summary(lm(x ~ t + I(t^2) + t_1, data = data))$fstatistic
         varModel  <- summary(lm(I(x)^2 ~ t + I(t^2) + t_1, data = data))$fstatistic
-
 
     # univariate case
     } else
@@ -139,7 +137,7 @@ asm_preJoint <- function(data, simulate = FALSE) {
             "t_1" = data[-N]
         )
 
-        # F-Test oder einzel Test?
+        # F-Test
         meanModel <- summary(lm(x ~ t + I(t^2) + t_1, data = data))$fstatistic
         varModel  <- summary(lm(I(x)^2 ~ t + I(t^2) + t_1, data = data))$fstatistic
 
@@ -148,16 +146,16 @@ asm_preJoint <- function(data, simulate = FALSE) {
 
     if (simulate) {
         list(
-            pre_joint_mean_pvalue = pf(meanModel[1], meanModel[2],meanModel[3],lower.tail=FALSE),
-            pre_joint_var_pvalue  = pf(varModel[1], varModel[2],varModel[3],lower.tail=FALSE)
+            pre_joint_mean_pvalue = pf(meanModel[1], meanModel[2], meanModel[3], lower.tail=FALSE),
+            pre_joint_var_pvalue  = pf(varModel[1], varModel[2], varModel[3], lower.tail=FALSE)
         )
     } else {
         data.table(
             Assumption            = "iid",
             Name                  = "Spanos Auxiliary Regression",
             Help                  = list(list(help("asm_preJoint", package = "assumptions"))),
-            pre_joint_mean_pvalue = pf(meanModel[1], meanModel[2],meanModel[3],lower.tail=FALSE),
-            pre_joint_var_pvalue  = pf(varModel[1], varModel[2],varModel[3],lower.tail=FALSE)
+            pre_joint_mean_pvalue = pf(meanModel[1], meanModel[2], meanModel[3], lower.tail=FALSE),
+            pre_joint_var_pvalue  = pf(varModel[1], varModel[2], varModel[3], lower.tail=FALSE)
         )
     }
 

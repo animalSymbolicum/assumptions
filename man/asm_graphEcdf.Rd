@@ -2,7 +2,7 @@
 % Please edit documentation in R/asm_graph.R
 \name{asm_graphEcdf}
 \alias{asm_graphEcdf}
-\title{Plot Cummulative Distribution Function of data}
+\title{Plot Cumulative Distribution Function of data}
 \usage{
 asm_graphEcdf(data, theoMean = mean(data), theoSD = sd(data))
 }
@@ -14,8 +14,8 @@ asm_graphEcdf(data, theoMean = mean(data), theoSD = sd(data))
 \item{theoSD}{standard deviation for theoretic distribution.}
 }
 \description{
-This function plots the empiricial cummulative distribution function derived from data against
-the theoretical cummulative distribution function of the normal distribution with mean and sd
+This function plots the empiricial cumulative distribution function derived from data against
+the theoretical cumulative distribution function of the normal distribution with mean and sd
 calculated from data.
 }
 \examples{

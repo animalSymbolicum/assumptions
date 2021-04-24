@@ -2,7 +2,7 @@
 % Please edit documentation in R/asm_ttest.R
 \name{asm_ttest}
 \alias{asm_ttest}
-\title{t-Test with explicit assumptions}
+\title{t-test with explicit assumptions}
 \usage{
 asm_ttest(x, y = NULL, ..., confirm = TRUE, diagnosePlots = TRUE, color = T)
 }
@@ -20,8 +20,8 @@ asm_ttest(x, y = NULL, ..., confirm = TRUE, diagnosePlots = TRUE, color = T)
 \item{color}{logical. If TRUE the assumption print is colored.}
 }
 \description{
-This function is a wrapper for the  \link[stats]{t.test} function. Before conducting the t-Test diagnostic
-plots are shown to assess the assumptions of the t-Test.
+This function is a wrapper for the  \link[stats]{t.test} function. Before conducting the t-test diagnostic
+plots are shown to assess the assumptions of the t-test.
 }
 \examples{
 asm_ttest(rnorm(30), rnorm(30, 2))

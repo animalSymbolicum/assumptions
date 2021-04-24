@@ -15,8 +15,9 @@ asm_graphRuns(data, separateBy = median(data), legend = T)
 }
 \description{
 This function plots the runs of data. A run as change in the trend of a data point series is coded
-by dashed lines. Red points are above the separateBy function (default is median) and blue points are bellow
-separateBy function. The Runs Plot is a graphical representation of the Wald-Wolfowitz Runs Test.
+by dashed lines. Red points are above the estimate of the separateBy function (default is median) and
+blue points are below the estimate of the separateBy function. The Runs Plot is a graphical
+representation of the Wald-Wolfowitz Runs Test.
 See also the \link[randtests]{runs.test} function.
 }
 \examples{

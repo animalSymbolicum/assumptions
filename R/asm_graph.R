@@ -75,10 +75,10 @@ asm_graphDotplot <- function(data) {
 
 }
 
-#' Plot Cummulative Distribution Function of data
+#' Plot Cumulative Distribution Function of data
 #'
-#' This function plots the empiricial cummulative distribution function derived from data against
-#' the theoretical cummulative distribution function of the normal distribution with mean and sd
+#' This function plots the empiricial cumulative distribution function derived from data against
+#' the theoretical cumulative distribution function of the normal distribution with mean and sd
 #' calculated from data.
 #' @param data a vector, list or data.frame of data values.
 #' @param theoMean mean for theoretic distribution.
@@ -148,9 +148,9 @@ asm_graphHist <- function(data, addLine = TRUE) {
 
 }
 
-#' Plot Cummulative Mean of data
+#' Plot Cumulative Mean of data
 #'
-#' This function plots the fluctuation of the mean if its calculated as cummulated mean.
+#' This function plots the fluctuation of the mean if its calculated as cumulated mean.
 #' @param data a vector, list or data.frame of data values.
 #' @param legend logical add legend.
 #' @examples
@@ -312,8 +312,9 @@ asm_graphDifferencesign <- function(data) {
 #' Runs Plot of data
 #'
 #' This function plots the runs of data. A run as change in the trend of a data point series is coded
-#' by dashed lines. Red points are above the separateBy function (default is median) and blue points are bellow
-#' separateBy function. The Runs Plot is a graphical representation of the Wald-Wolfowitz Runs Test.
+#' by dashed lines. Red points are above the estimate of the separateBy function (default is median) and
+#' blue points are below the estimate of the separateBy function. The Runs Plot is a graphical
+#' representation of the Wald-Wolfowitz Runs Test.
 #' See also the \link[randtests]{runs.test} function.
 #' @param data a vector, list or data.frame of data values.
 #' @param separateBy a function to seperate the data points by (default is median).
@@ -397,9 +398,9 @@ asm_graphScatterplot <- function(data) {
     }
 }
 
-#' Plot Cummulative Variance of data
+#' Plot Cumulative Variance of data
 #'
-#' This function plots the fluctuation of the variance if its calculated as cummulated variance.
+#' This function plots the fluctuation of the variance if its calculated as cumulated variance.
 #' @param data a vector, list or data.frame of data values.
 #' @examples
 #' # normal data vs. mixed non-id data
@@ -441,7 +442,7 @@ asm_graphCumvar <- function(data) {
 
 #' Window Graph of data
 #'
-#' This function draws 'windows' onto a scatterplot of the data as a support to imagen homogeneity.
+#' This function draws 'windows' onto a scatterplot of the data as a support to demonstrate homogeneity.
 #' Each window should contain the same pattern if the data points are homogeneous or
 #' identically distributed.
 #' @param data a vector, list or data.frame of data values.
