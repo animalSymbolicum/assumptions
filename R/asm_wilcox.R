@@ -22,7 +22,7 @@ asm_wilcox <- function(x, y = NULL, ..., confirm = T, diagnosePlots = T, color =
         cat(paste0(rep("*", 90), collapse = ""))
         cat("\n")
         cat(
-            "If you confirm to acknowledge that under violation(s) of the assumptions the wilcoxon test\nthe wilcoxon results might be wrong.\n"
+            "If you confirm to acknowledge that under violation(s) of the assumptions the wilcoxon test\nthe results might be wrong.\n"
         )
         readline(prompt="Press [enter] to confirm")
 

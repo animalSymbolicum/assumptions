@@ -88,7 +88,7 @@ asm_wilcox(rnorm(20), color = F)
 #>  IV ) are independent, which means each value is not influenced by any other value.
 #> ******************************************************************************************
 #> If you confirm to acknowledge that under violation(s) of the assumptions the wilcoxon test
-#> the wilcoxon results might be wrong.
+#> the results might be wrong.
 #> Press [enter] to confirm
 ```
 
