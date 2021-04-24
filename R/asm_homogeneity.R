@@ -53,7 +53,8 @@ asm_homogeneity <- function(data = NULL,
     } else {
 
         testBatch[,":="(alter = NULL, nbparams=NULL)]
-        asm_internalLibNames(testBatch)[,list(Name, Help, pvalue)][]
+        testBatch <- asm_internalLibNames(testBatch)[,list(Name, Help, pvalue)]
+        testBatch[]
 
     }
 

@@ -18,8 +18,11 @@
 
 asm_preTests <- function(data,
                          tests = NULL,
-                         testBatch = asm_intSelT(asm_library(print = F), tests),
+                         testBatch = NULL,
                          simulate = FALSE) {
+
+    # select tests
+    if (is.null(testBatch)) testBatch <- asm_intSelT(asm_library(print = F), tests)
 
     # select test
     if (!is.null(tests) && is.character(tests)) {
@@ -86,7 +89,10 @@ asm_preTests <- function(data,
 
     if (simulate) {
         unlist(result, recursive = F)
-    } else rbindlist(result, fill = T)
+    } else {
+        result <- rbindlist(result, fill = T)
+        result[,stat :=NULL][]
+    }
 
 }
 

@@ -4,12 +4,7 @@
 \alias{asm_preTests}
 \title{Apply assumption tests}
 \usage{
-asm_preTests(
-  data,
-  tests = NULL,
-  testBatch = asm_intSelT(asm_library(print = F), tests),
-  simulate = FALSE
-)
+asm_preTests(data, tests = NULL, testBatch = NULL, simulate = FALSE)
 }
 \arguments{
 \item{data}{a vector, list or data.frame of data values.}
