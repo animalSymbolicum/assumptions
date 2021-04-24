@@ -89,10 +89,7 @@ asm_preTests <- function(data,
 
     if (simulate) {
         unlist(result, recursive = F)
-    } else {
-        result <- rbindlist(result, fill = T)
-        result[,stat :=NULL][]
-    }
+    } else rbindlist(result, fill = T)
 
 }
 

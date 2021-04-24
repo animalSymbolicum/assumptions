@@ -263,8 +263,8 @@ asm_independence(rnorm(10), 1)
 #>          Name      Help    pvalue
 #> 1: Box-Pierce <list[1]> 0.7579546
 asm_randomness(rnorm(10), 1)
-#>            Name      Help         stat    pvalue
-#> 1: Bartels Rank <list[1]> bartels.rank 0.9004949
+#>            Name      Help    pvalue
+#> 1: Bartels Rank <list[1]> 0.9004949
 asm_homogeneity(list(A=rnorm(10), B=rnorm(10)), 1)
 #>      Name      Help    pvalue
 #> 1: F-Test <list[1]> 0.8583127

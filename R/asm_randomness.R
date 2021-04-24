@@ -97,7 +97,7 @@ asm_randomness <- function(data = NULL,
 
         testBatch[,":="(alter = NULL, nbparams=NULL, Name=NULL)]
         testBatch <- asm_internalLibNames(testBatch)
-        testBatch[,":="(index = NULL, Package=NULL, Assumption = NULL)]
+        testBatch[,":="(index = NULL, Package=NULL, Assumption = NULL, stat = NULL)]
         setnames(testBatch, gsub("p[.]value","pvalue" , names(testBatch)))
         testBatch[]
 
